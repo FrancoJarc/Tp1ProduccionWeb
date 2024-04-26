@@ -10,7 +10,7 @@ class Aldeano{
     }
 
     public function recolectar(Arbusto $arbusto){
-        $tiempo=$arbusto->alimento/$this->velocidadRecoleccion;
+        $tiempo=$arbusto->getAlimento()/$this->velocidadRecoleccion;
         $tiempo=ceil($tiempo);
 
         if($tiempo<=1){

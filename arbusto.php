@@ -2,9 +2,18 @@
 
 class Arbusto{
 
-    public function __construct($alimento){
-        $this->alimento=$alimento;
+    private $cantidadAlimento;
+
+    public function __construct(){
+        $this->cantidadAlimento=125;
     }
+
+
+    public function getAlimento(){
+
+        return $this->cantidadAlimento;
+    }
+
 
 
 }
