@@ -2,9 +2,8 @@
 
 interface Recolectable{
 
-    function getAlimento(){
-        return 10;
-    }
+    function getAlimento();
+
 }
 
 ?>

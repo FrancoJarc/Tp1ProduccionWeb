@@ -1,6 +1,8 @@
 <?php
 
-class Pesquero{
+require_once("recolector.php");
+
+class Pesquero implements Recolector{
 
     private $velocidadRecoleccion;
 
@@ -9,7 +11,7 @@ class Pesquero{
 
     }
 
-    public function recolectar(BancoDePesca $banco){
+    public function recolectar(Recolectable $banco){
 
         $tiempo=$banco->getAlimento()/$this->velocidadRecoleccion;
         $tiempo=ceil($tiempo);

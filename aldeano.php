@@ -1,31 +1,20 @@
 <?php
+require_once("recolector.php");
 
-abstract class Aldeano{
+
+abstract class Aldeano implements Recolector{
 
     private $velocidadRecoleccion;
     private $bonus;
 
-    function __construct($bonus){
+    function __construct($velocidadRecoleccion,$bonus){
 
-        $this->velocidadRecoleccion=18;
+        $this->velocidadRecoleccion=$velocidadRecoleccion;
         $this->bonus=$bonus;
     }
 
-    public function recolectar(Arbusto $arbusto){
-        $tiempo=$arbusto->getAlimento()/$this->velocidadRecoleccion;
-        $tiempo=ceil($tiempo);
+    public function recolectar(Recolectable $recolectable){}
 
-        if($tiempo<=1){
-            echo"Recolecte todo el alimento en ".$tiempo." minuto.";
-        }else{
-            echo"Recolecte todo el alimento en ".$tiempo." minutos.";
-        }
-        
-    }
-
-    public function getBonus(){
-        return $this->bonus;
-    }
 }
 
 

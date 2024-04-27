@@ -1,6 +1,8 @@
 <?php
 
-class Arbusto{
+require_once("recolectable.php");
+
+class Arbusto implements Recolectable{
 
     private $cantidadAlimento;
 
@@ -9,8 +11,7 @@ class Arbusto{
     }
 
 
-    public function getAlimento(){
-
+    function getAlimento(){
         return $this->cantidadAlimento;
     }
 

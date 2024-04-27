@@ -1,6 +1,8 @@
 <?php
 
-class BancoDePesca{
+require_once("recolectable.php");
+
+class BancoDePesca implements Recolectable{
 
     private $cantidadAlimento;
 
@@ -8,7 +10,7 @@ class BancoDePesca{
         $this->cantidadAlimento=225;
     }
 
-    public function getAlimento(){
+    function getAlimento(){
         return $this->cantidadAlimento;
     }
 
