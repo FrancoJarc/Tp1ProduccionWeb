@@ -4,7 +4,7 @@ class Aldeano{
 
     private $velocidadRecoleccion;
 
-    public function __construct(){
+    function __construct(){
 
         $this->velocidadRecoleccion=18;
     }
