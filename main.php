@@ -7,7 +7,6 @@ $arbusto1 = new Arbusto();
 $aldeano1= new Aldeano();
 $aldeano1->recolectar($arbusto1);
 
-$arbusto1->getAlimento();
 
 
 
