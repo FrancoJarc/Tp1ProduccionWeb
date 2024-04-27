@@ -1,12 +1,14 @@
 <?php
 
-class Aldeano{
+abstract class Aldeano{
 
     private $velocidadRecoleccion;
+    private $bonus;
 
-    function __construct(){
+    function __construct($bonus){
 
         $this->velocidadRecoleccion=18;
+        $this->bonus=$bonus;
     }
 
     public function recolectar(Arbusto $arbusto){
@@ -19,6 +21,10 @@ class Aldeano{
             echo"Recolecte todo el alimento en ".$tiempo." minutos.";
         }
         
+    }
+
+    public function getBonus(){
+        return $this->bonus;
     }
 }
 
