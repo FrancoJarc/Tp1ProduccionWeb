@@ -13,7 +13,7 @@ abstract class Aldeano implements Recolector{
         $this->bonus=$bonus;
     }
 
-    public function recolectar(Recolectable $recolectable){}
+    public function recolectar(Recolectable $recolectable, int $cantidad){}
 
 }
 

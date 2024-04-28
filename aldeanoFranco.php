@@ -14,15 +14,15 @@ class AldeanoFranco extends Aldeano implements Recolector{
 
     }
 
-    public function recolectar(Recolectable $recolectable){
+    public function recolectar(Recolectable $recolectable, int $cantidad){
 
-        $tiempo=$recolectable->getAlimento()/$this->velocidadRecoleccion;
+        $tiempo=($recolectable->getAlimento()*$cantidad)/$this->velocidadRecoleccion;
         $tiempo=ceil($tiempo);
 
         if($tiempo<=1){
-            echo"Recolecte todo el alimento en ".$tiempo." minuto.";
+            return"Recolecté todo el alimento en ".$tiempo." minuto.";
         }else{
-            echo"Recolecte todo el alimento en ".$tiempo." minutos.";
+            return"Recolecté todo el alimento en ".$tiempo." minutos.";
         }
 
     }

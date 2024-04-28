@@ -11,15 +11,15 @@ class Pesquero implements Recolector{
 
     }
 
-    public function recolectar(Recolectable $banco){
+    public function recolectar(Recolectable $banco, int $cantidad){
 
-        $tiempo=$banco->getAlimento()/$this->velocidadRecoleccion;
+        $tiempo=($banco->getAlimento()*$cantidad)/$this->velocidadRecoleccion;
         $tiempo=ceil($tiempo);
 
         if($tiempo<=1){
-            echo"Recolecte toda la pesca en ".$tiempo." minuto.";
+            return"Recolecté toda la pesca en ".$tiempo." minuto.";
         }else{
-            echo"Recolecte toda la pesca en ".$tiempo." minutos.";
+            return"Recolecté toda la pesca en ".$tiempo." minutos.";
         }
     }
 
