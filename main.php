@@ -16,38 +16,61 @@ $bancoDePesca1= new BancoDePesca();
 
 $pesquero1->recolectar($bancoDePesca1);
 */
-
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego</title>
-</head>
-<body>
 
-<form action="main.php" method="post">
+
+<form action="" method="post">
 
     <h2>Tiempo de recolección </h2>
     <label for="">Elige recolector</label>
-    <select name="recolector" id="">
-        <option value="">Seleccione un recolector</option>
-        <option value="">Aldeano Chino</option>
-        <option value="">Aldeano Franco</option>
-        <option value="">Pesquero</option>
+    <select name="recolector" required>
+        <option value="" hidden >Seleccione un recolector</option>
+        <option value="aldeano_chino">Aldeano Chino</option>
+        <option value="aldeano_franco">Aldeano Franco</option>
+        <option value="pesquero">Pesquero</option>
     </select>    
 
     <label for="">Elige recolectable</label>
-    <select name="recolectable" id="">
-        <option value="">Seleccione un recolectable</option>
-        <option value="">Arbusto</option>
-        <option value="">Banco de pesca</option>
+    <select name="recolectable" required>
+        <option value="" hidden>Seleccione un recolectable</option>
+        <option value="arbusto">Arbusto</option>
+        <option value="banco">Banco de pesca</option>
     </select>   
     
     <input type="submit" value="Calcular">
 </form>
+
+<?php
+
+if($_POST){
+
+$recolector= $_POST['recolector'];
+$recolectable= $_POST['recolectable'];
+
+
+    echo"Recolector:  ".$recolector."<br>Recolectable:   ".$recolectable."<br>";
+
+    if($recolector=="aldeano_chino" && $recolectable=="arbusto"){
+        $aldeanoChino= new AldeanoChino();
+        $arbusto= new Arbusto();
+        $aldeanoChino->recolectar($arbusto);
+
+    }elseif($recolector=="aldeano_franco" && $recolectable=="arbusto"){
+        $aldeanoFranco= new AldeanoFranco();
+        $arbusto= new Arbusto();
+        $aldeanoFranco->recolectar($arbusto);
+    }elseif($recolector=="pesquero" && $recolectable=="banco"){
+        $pesquero= new Pesquero();
+        $banco=new BancoDePesca();
+        $pesquero->recolectar($banco);
+    }else{
+
+        echo"Error";
+    }
+}
+
+?>
 
 
 

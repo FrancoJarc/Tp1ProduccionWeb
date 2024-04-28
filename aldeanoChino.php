@@ -5,8 +5,12 @@ require_once("recolector.php");
 
 class AldeanoChino extends Aldeano implements Recolector{
 
+    private $velocidadRecoleccion;
+    private $bonus;
+
     function __construct(){
-        parent:: __construct(18 ,null);
+        $this->velocidadRecoleccion = 18;
+        $this->bonus = null;
 
     }
 

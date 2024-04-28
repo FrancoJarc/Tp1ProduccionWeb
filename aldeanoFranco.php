@@ -5,8 +5,12 @@ require_once("recolector.php");
 
 class AldeanoFranco extends Aldeano implements Recolector{
 
+    private $velocidadRecoleccion;
+    private $bonus;
+
     function __construct(){
-        parent:: __construct(23 ,25);
+        $this->velocidadRecoleccion = 23;
+        $this->bonus = 25;
 
     }
 
